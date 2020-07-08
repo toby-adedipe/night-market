@@ -1,16 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Search from './components/Search'
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import SearchResults from './components/SearchResults';
+import Landing from './components/Landing';
+import { connect } from 'react-redux';
 
 function App() {
   return (
-    <div className="App">
-      <div>
-        <Search />
+    <Router>
+      <div className="App">
+        <Route exact path="/" component={Landing} />
+        <Route path='/results' component={SearchResults} />
       </div>
-    </div>
+    </Router>
   );
 }
 
-export default App;
+export default connect()(App);

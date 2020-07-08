@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { handleReceiveTweets } from '../actions/tweets';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 class Search extends Component{
     constructor(props){
@@ -7,7 +10,8 @@ class Search extends Component{
         this.handleSubmit = this.handleSubmit.bind(this);
     }
     state={
-        value: ''
+        value: '',
+        tweets:[]
     }
     
     handleChange(value){
@@ -17,23 +21,27 @@ class Search extends Component{
     }
     handleSubmit(e){
         e.preventDefault();
-        console.log(this.state.value)
+        this.props.dispatch(handleReceiveTweets(this.state.value))
+            .then(this.props.history.push('/results'))
     }
+
     render(){
         const value = this.state.search
         return(
             <div className="search-bar">
-                    <input
-                        type="text"
-                        placeholder="What can we help you find today?"
-                        value= { value }
-                        onChange={(e)=>this.handleChange(e.target.value)}
-                        className="search-input"
-                    />
-                    <div onClick={this.handleSubmit} className="search-div"><i className="fa fa-search" aria-hidden="true"></i></div>
+                    <form onSubmit={this.handleSubmit}>
+                        <input
+                            type="text"
+                            placeholder="What can we help you find today?"
+                            value= { value }
+                            onChange={(e)=>this.handleChange(e.target.value)}
+                            className="search-input"
+                        />
+                        <div onClick={this.handleSubmit} className="search-div"><i className="fa fa-search" aria-hidden="true"></i></div>
+                    </form>
             </div>
         )
     }
 }
 
-export default Search;
+export default withRouter(connect()(Search));

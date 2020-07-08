@@ -1,11 +1,15 @@
 *{
-  margin: 0;
   padding: 0;
+  margin:0;
+}
+a{
+  text-decoration: none;
+  color:inherit;
 }
 .App{
   margin: 1rem;
 }
-.search-bar{
+.search-bar form{
   display: flex;
   width:100%;
 }
@@ -13,15 +17,99 @@
   height: 44px;
   width: 80%;
   font-size: 1rem;
-  border: 1px solid #eaeaea;
+  border: 1px solid #dddddd;
+  padding: 0 0 0 .5rem;
+  border-radius: 4px 0 0 4px;
+}
+input:focus{
+  outline: none;
+  border: 1px solid #727272;
 }
 .search-div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 44px;
   width: 20%;
-  border: 1px solid #eaeaea;
+  border: 1px solid #dddddd;
   border-left: 0;
   cursor: pointer;
+  border-radius: 0 4px 4px 0;
 }
 .fa-search{
   font-size: 1.5rem;
+}
+.popular-categories {
+  margin: 0 0 1rem 0;
+}
+.popular-categories h4{
+  margin: .5rem 0 0 0;
+  text-align: center;
+}
+.category-section{
+  position: relative;
+  margin: 1rem 0;
+}
+.categories{
+  width: 45%;
+  border-radius: 4px;
+  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;  display: inline-block;
+  margin: 0 20px 20px 0;
+  position: absolute;
+  color: #eaeaea;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  cursor: pointer;
+}
+.categories p{
+  margin-bottom: 10px;
+}
+.shoes{
+  height: 215px;
+  margin: 0 0 1.5rem 0;
+  background-image: url('images/shoes1.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bags{
+  height: 332px;
+  margin: 0 0 1.5rem 55%;
+  background-image: url('images/bags.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+
+.hair{
+  height: 332px;
+  margin: 235px 1.5rem 0 0;
+  background-image: url('images/hair.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.food{
+  height: 215px;
+  margin: 352px 0 0 55%;
+  background-image: url('images/food.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.tweets{
+  margin: .75rem 0;
+  box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;  display: inline-block;
+  border-radius: 4px;
+  padding: .5rem;
+  font-size: .85rem;
+}
+.tweets p span{
+  color: #9774BB;
 }
