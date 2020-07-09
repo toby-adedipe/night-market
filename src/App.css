@@ -2,6 +2,11 @@
   padding: 0;
   margin:0;
 }
+h1{
+  font-family: 'Montserrat Subrayada', sans-serif;
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
 a{
   text-decoration: none;
   color:inherit;
@@ -21,9 +26,13 @@ a{
   padding: 0 0 0 .5rem;
   border-radius: 4px 0 0 4px;
 }
-input:focus{
+input:focus, select:focus{
   outline: none;
   border: 1px solid #727272;
+}
+select{
+  border: 1px solid #dddddd;
+  border-left: 0;
 }
 .search-div{
   display: flex;
@@ -112,4 +121,10 @@ input:focus{
 }
 .tweets p span{
   color: #9774BB;
+}
+.search-results .search-info{
+  font-size: .75rem;
+  color: #aaaaaa;
+  text-align: center;
+  margin: .5rem;
 }

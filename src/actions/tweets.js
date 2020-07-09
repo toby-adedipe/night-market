@@ -20,12 +20,12 @@ function filterSortData (data){
 }
 
   
-export function handleReceiveTweets(value){
+export function handleReceiveTweets({ value, location }){
     return(dispatch)=>{
         dispatch(showLoading())
-        return getTweets(value)
+        return getTweets({ value, location })
             .then((data)=>{
-                const filtered = filterSortData(data)
+                const filtered = filterSortData(data).filter(item=>item.tweet.includes(value));
                 dispatch(receiveTweets(filtered));
                 dispatch(hideLoading());
             })

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Search from './Search';
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux';
 
 class SearchResults extends Component{
@@ -12,9 +11,17 @@ class SearchResults extends Component{
     }
     render(){
         const { tweets } = this.props.tweets
+        let Info;
+        if (tweets && tweets[0]){
+            Info = <p className="search-info">Tap to take you to the tweet</p>
+        }else{
+            Info = <p className="search-info">No tweets to see here</p>
+
+        }
         return(
-            <div>
+            <div className="search-results">
                 <Search />
+                {Info}
                 {tweets && tweets[0] && 
                     Object.keys(tweets).map(id=>(
                         <a key={id} href={tweets[id].link} rel="noopener noreferrer" target="_blank">

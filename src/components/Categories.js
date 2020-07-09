@@ -14,19 +14,27 @@ class Categories extends Component{
     }
     
     redirectShoes(){
-        this.props.dispatch(handleReceiveTweets("shoes"))
+        const value = "shoes";
+        const location = "";
+        this.props.dispatch(handleReceiveTweets({ value, location }))
             .then(this.props.history.push('/results'))
     }
     redirectBags(){
-        this.props.dispatch(handleReceiveTweets("bags"))
+        const value = "bags";
+        const location = "";
+        this.props.dispatch(handleReceiveTweets({ value, location }))
             .then(this.props.history.push('/results'))
     }
     redirectHair(){
-        this.props.dispatch(handleReceiveTweets("hair"))
+        const value = "hair";
+        const location = "";
+        this.props.dispatch(handleReceiveTweets({ value, location }))
             .then(this.props.history.push('/results'))
     }
     redirectFood(){
-        this.props.dispatch(handleReceiveTweets("food"))
+        const value = "food";
+        const location = "";
+        this.props.dispatch(handleReceiveTweets({ value, location }))
             .then(this.props.history.push('/results'))
     }
 
